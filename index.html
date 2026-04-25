@@ -1,0 +1,282 @@
+            <!-- УДАЛИ ВСЕ КОММЕНТАРИИ КОГДА ЗАКОНЧИШЬ ИЛИ ЗАПОМНИШЬ -->
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сленг программистов.</title>
+    <style>
+        :root {
+            --bg: #fdfbf7;
+            --text: #2c2c2c;
+            --border: #d4c9b5;
+            --accent: #5a4a3a;
+            --link: #8b5a2b;
+            --hover-bg: #f0ebe0;
+            --code-bg: #f4f1ea;
+            --sidebar-width: 220px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            display: flex;
+            min-height: 100vh;
+        }
+
+        /* --- Боковая панель --- */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: #f8f5f0;
+            border-right: 2px solid var(--border);
+            padding: 30px 15px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.03);
+        }
+
+        .sidebar h3 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--accent);
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 10px;
+            text-align: center;
+        }
+
+        .alphabet-nav {
+            list-style: none;
+        }
+
+        .alphabet-nav li {
+            margin-bottom: 2px;
+        }
+
+        .alphabet-nav a {
+            display: block;
+            padding: 6px 10px;
+            color: var(--text);
+            text-decoration: none;
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            border-left: 3px solid transparent;
+            transition: all 0.2s;
+            border-radius: 0 4px 4px 0;
+            font-size: 0.95rem;
+        }
+
+        .alphabet-nav a:hover {
+            background-color: var(--hover-bg);
+            border-left-color: var(--accent);
+            color: var(--link);
+        }
+
+        /* --- Основной контент --- */
+        .main-content {
+            margin-left: var(--sidebar-width);
+            padding: 40px 50px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+            border-bottom: 2px double var(--border);
+            padding-bottom: 30px;
+        }
+
+        h1 {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 2.4rem;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: #6b5e4e;
+            font-size: 1.1rem;
+        }
+
+        h2 {
+            font-family: 'Courier New', Courier, monospace;
+            color: var(--accent);
+            margin: 35px 0 20px;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border);
+            font-size: 1.6rem;
+        }
+
+        /* --- Карточка слова --- */
+        .term-card {
+            margin-bottom: 25px;
+            padding: 15px 20px;
+            background-color: #fffefb;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+            scroll-margin-top: 20px;
+        }
+
+        .term-title {
+            font-family: 'Courier New', Courier, monospace;
+            font-weight: bold;
+            font-size: 1.3rem;
+            color: var(--accent);
+            margin-bottom: 5px;
+        }
+
+        .term-desc {
+            margin-left: 10px;
+            font-size: 1.05rem;
+        }
+
+        .term-example {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: var(--code-bg);
+            padding: 3px 8px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            color: #4a3b2f;
+            display: inline-block;
+            margin: 5px 0;
+        }
+
+        /* --- Раздел опроса --- */
+        .survey-box {
+            background-color: #faf9f7;
+            border: 1px dashed var(--border);
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 5px;
+            font-style: italic;
+        }
+
+        .highlight {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #f0ebe0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #8b7a64;
+            border-top: 1px solid var(--border);
+            padding-top: 20px;
+        }
+
+        @media (max-width: 700px) {
+            body {
+                flex-direction: column;
+            }
+            .sidebar {
+                position: relative;
+                width: 100%;
+                border-right: none;
+                border-bottom: 2px solid var(--border);
+                padding: 15px;
+            }
+            .main-content {
+                margin-left: 0;
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== БОКОВАЯ ПАНЕЛЬ ==================== -->
+    <aside class="sidebar">
+        <h3>📖 Словарь</h3>
+        <ul class="alphabet-nav">
+            <!-- добавь сюда ссылки на термины. УДАЛИ ЭТОТ КОММЕНТ.
+                 Пример ссылки: <li><a href="#term-твой-id">Твой термин</a></li>
+                 id должен совпадать с id карточки слова в основном блоке -->
+            <li><a href="#term-1">Пример слова</a></li>
+            <li><a href="#term-2">Термин2</a></li>
+            <li><a href="#term-3">Термин3</a></li>
+
+        </ul>
+    </aside>
+
+    <!-- ==================== ОСНОВНОЙ КОНТЕНТ ==================== -->
+    <main class="main-content">
+        <header>
+            <h1>Профессиональный сленг программистов.</h1>
+            <p class="subtitle">Мы провели исследование профессиональной лексики преподавателей КСИПТ и разместили результаты на этом сайте. Удачного чтения! :)</p>
+        </header>
+
+        <!-- Секция "О проекте" + результаты опроса -->
+        <section id="intro">
+            <h2>📋 О проекте</h2>
+            <!--введение, цель проекта, описание опроса-->
+            <p>Целью проекта стала помощь начинающим специалистам понимать своих старших коллег в сфере IT. Часто в повседневной жизни мы встречаем неизвестные слова, которые были придуманы людьми для простоты общения между определенными социальными группами. Программисты, конечно, не стали исключением.</p>
+            
+            <div class="survey-box">
+                <h3 style="margin-top: 0; font-family: 'Courier New';">Статистика опроса</h3>
+                <!-- ТВОИ ДАННЫЕ: впиши реальные цифры опроса -->
+                <p><span class="highlight">Опрошено:</span> *** преподавателей.</p>
+                <p><span class="highlight">Самый популярный термин:</span> «***».</p>
+                <p><span class="highlight">Вывод:</span> *** </p>
+            </div>
+        </section>
+
+        <!-- Секция словаря -->
+        <section id="dictionary">
+            <h2>📕 Словарь.</h2>
+            <p style="margin-bottom: 25px; color: #5e5343;"> Нажмите на термин в боковом меню или просто пролистайте вниз. Первая карточка - пример. Он показывает структуру для упрощенного понимания. Все последующие карточки соответствуют данной структуре.</p>
+
+            <!-- ========== ШАБЛОН КАРТОЧКИ ========== -->
+            <!-- не забудь менять долбанный айди. УДАЛИ ЭТО ПОТОМ НЕ ПОЗОРЬСЯ.-->
+            
+            <div class="term-card" id="term-1">
+                <div class="term-title"> ТЕРМИН</div>
+                <div class="term-desc">Здесь будет определение термина.</div>
+                <div class="term-example">Здесь будет пример употребления.</div>
+            </div>
+
+            <!-- Конец карточки. -->
+
+            <div class="term-card" id="term-2">
+                <div class="term-title"> ТЕРМИН2</div>
+                <div class="term-desc">определение</div>
+                <div class="term-example">пример употребления.</div>
+            </div>
+
+            <div class="term-card" id="term-3">
+                <div class="term-title"> ТЕРМИН3</div>
+                <div class="term-desc">определение</div>
+                <div class="term-example">пример употребления.</div>
+            </div>
+
+        </section>
+
+        <footer>
+            <p>Индивидуальный проект &copy; 2026 | Проект создан Копейкиной Валерией и Дауровым Идаром. Студентами КСИПТ группы ИВ1-25</p>
+        </footer>
+    </main>
+
+</body>
+</html>
